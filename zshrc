@@ -1,10 +1,10 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent direnv)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -23,7 +23,7 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init - 2> /dev/null)" && RPROMPT+='[🐍 $(pyenv version-name)]'
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init - 2> /dev/null)" # && RPROMPT+='[🐍 $(pyenv version-name)]'
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -70,3 +70,19 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+export GOOGLE_APPLICATION_CREDENTIALS=/home/tdurova/code/tdurova/gcp/wagon-bootcamp-429212-36df60a5165f.json
+
+export PYTHONPATH="/home/tdurova/code/tdurova/04-Decision-Science/01-Project-Setup/data-context-and-setup:$PYTHONPATH"
+
+alias jn='jupyter notebook'
+
+export PATH=~/wkhtmltopdf/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+
+unset RPROMPT
+unset PROMPT
+eval "$(starship init zsh)"
+export PATH="$HOME/sdk/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/bin"
+export PATH="$HOME/bin:$PATH"

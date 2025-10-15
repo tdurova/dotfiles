@@ -62,3 +62,6 @@
 [user]
 	email = tatyana.durova@gmail.com
 	name = Tanja Durova
+[diff]
+	colorMoved = plain
+	wordDiff = plain
